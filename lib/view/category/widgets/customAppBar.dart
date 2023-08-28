@@ -53,7 +53,7 @@ class CustomAppBar extends StatelessWidget {
                       padding: EdgeInsets.only(top: 4),
                       child: CircleAvatar(
                         radius: 3,
-                        backgroundColor: AppStyle.kmainColor,
+                        backgroundColor: AppStyle.kMainColor,
                       ),
                     )
                   ],

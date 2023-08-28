@@ -35,7 +35,7 @@ class _LayOutScreenState extends State<LayOutScreen> {
         child: BottomNavigationBar(
             elevation: 10,
             currentIndex: currentIndex,
-            selectedItemColor: AppStyle.kmainColor,
+            selectedItemColor: AppStyle.kMainColor,
             unselectedItemColor: Colors.grey,
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
             onTap: (value) {

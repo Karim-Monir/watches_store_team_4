@@ -15,7 +15,7 @@ class DefultSearch extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
-                boxShadow: const [AppStyle.defultBoxShadow]),
+                boxShadow: const [AppStyle.defaultBoxShadow]),
             child: TextFormField(
               decoration: const InputDecoration(
                   border: InputBorder.none,
@@ -32,7 +32,7 @@ class DefultSearch extends StatelessWidget {
           width: 44.w,
           height: 44.h,
           decoration: BoxDecoration(
-            color: AppStyle.kmainColor,
+            color: AppStyle.kMainColor,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Image.asset(

@@ -178,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 15.h,
                 ),
-                AppStyle.defultText(text: "Popular Item"),
+                AppStyle.defaultText(text: "Popular Item"),
                 SizedBox(
                   height: 400.h,
                   child: GridView.builder(

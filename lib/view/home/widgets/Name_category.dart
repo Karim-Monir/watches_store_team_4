@@ -3,11 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watches_store_team_4/utils/constant.dart';
 
 class NameOfCategory extends StatelessWidget {
-  NameOfCategory(
-      {super.key,
-      required this.onTap,
-      @required this.width,
-      required this.text});
+  NameOfCategory({super.key, required this.onTap, @required this.width, required this.text});
   VoidCallback onTap;
   double? width = 74.w;
   String text;
@@ -17,9 +13,7 @@ class NameOfCategory extends StatelessWidget {
       height: 35.h,
       width: width,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
-          boxShadow: const [AppStyle.defultBoxShadow]),
+          borderRadius: BorderRadius.circular(10), color: Colors.white, boxShadow: const [AppStyle.defaultBoxShadow]),
       child: GestureDetector(
         onTap: onTap,
         child: Center(
