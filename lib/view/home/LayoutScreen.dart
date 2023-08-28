@@ -19,7 +19,7 @@ class _LayOutScreenState extends State<LayOutScreen> {
   List<Widget> ScreenView = [
     const HomeScreen(),
     const ScanScreen(),
-    const CartScreen(),
+    const CartPage(),
     const ProfileScreen(),
   ];
 
