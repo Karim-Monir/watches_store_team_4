@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watches_store_team_4/View/auth/login.dart';
-import 'package:watches_store_team_4/View/splash/Splash%20Screen.dart';
-
-import 'View/auth/signUp.dart';
+import 'package:watches_store_team_4/view/auth/sign_up.dart';
+import 'package:watches_store_team_4/view/splash/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(
@@ -28,9 +26,9 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      initialRoute: splashScreen.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: {
-        splashScreen.routeName: (_) => splashScreen(),
+        SplashScreen.routeName: (_) => const SplashScreen(),
         LoginScreen.routeName: (_) => const LoginScreen(),
         SignUp.routeName: (_) => const SignUp(),
       },

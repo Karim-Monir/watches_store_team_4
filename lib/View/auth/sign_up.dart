@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:watches_store_team_4/View/login.dart';
-import 'package:watches_store_team_4/view/home/LayoutScreen.dart';
+import 'package:watches_store_team_4/View/auth/login.dart';
+import 'package:watches_store_team_4/view/home/layout_screen.dart';
 
-class signUp extends StatefulWidget {
+class SignUp extends StatefulWidget {
   static const String routeName = 'sign screen';
 
-  const signUp({super.key});
+  const SignUp({super.key});
   @override
-  State<signUp> createState() => _signUpState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _signUpState extends State<signUp> {
+class _SignUpState extends State<SignUp> {
   var nameController = TextEditingController();
 
   var emailController = TextEditingController();
@@ -51,9 +51,7 @@ class _signUpState extends State<signUp> {
             top: 40,
           ),
           child: Text("Create Account",
-              style: TextStyle(
-                  color: const Color.fromRGBO(2, 84, 100, 1),
-                  fontSize: ScreenUtil().setSp(30))),
+              style: TextStyle(color: const Color.fromRGBO(2, 84, 100, 1), fontSize: ScreenUtil().setSp(30))),
         ),
       ),
       body: SingleChildScrollView(
@@ -150,16 +148,14 @@ class _signUpState extends State<signUp> {
                         ? IconButton(
                             onPressed: () {
                               setState(() {
-                                isConfirmPasswordVisible =
-                                    !isConfirmPasswordVisible;
+                                isConfirmPasswordVisible = !isConfirmPasswordVisible;
                               });
                             },
                             icon: const Icon(Icons.remove_red_eye_outlined))
                         : IconButton(
                             onPressed: () {
                               setState(() {
-                                isConfirmPasswordVisible =
-                                    !isConfirmPasswordVisible;
+                                isConfirmPasswordVisible = !isConfirmPasswordVisible;
                               });
                             },
                             icon: const Icon(
@@ -185,8 +181,7 @@ class _signUpState extends State<signUp> {
                       onChanged: (bool? newValue) {
                         setState(() {
                           value = newValue!;
-                          isChecked =
-                              false; // Reset validation flag when Checkbox value changes
+                          isChecked = false; // Reset validation flag when Checkbox value changes
                         });
                       },
                     ),
@@ -211,18 +206,15 @@ class _signUpState extends State<signUp> {
                     if (formKey.currentState!.validate() && isChecked) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const LayOutScreen()),
+                        MaterialPageRoute(builder: (context) => const LayOutScreen()),
                       );
                     }
                   },
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                   color: const Color.fromRGBO(2, 84, 100, 1),
                   minWidth: double.infinity,
                   height: ScreenUtil().setHeight(45),
-                  child: const Text("Sign Up",
-                      style: TextStyle(color: Colors.white)),
+                  child: const Text("Sign Up", style: TextStyle(color: Colors.white)),
                 ),
                 SizedBox(
                   height: ScreenUtil().setHeight(15),
@@ -230,8 +222,7 @@ class _signUpState extends State<signUp> {
                 //facebook, google & apple
                 Column(
                   children: [
-                    const Image(
-                        image: AssetImage("assets/images/signUp/or.png")),
+                    const Image(image: AssetImage("assets/images/signUp/or.png")),
                     SizedBox(
                       height: ScreenUtil().setHeight(15),
                     ),
@@ -239,17 +230,14 @@ class _signUpState extends State<signUp> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image(
-                          image: const AssetImage(
-                              "assets/images/signUp/facebook.PNG"),
+                          image: const AssetImage("assets/images/signUp/facebook.PNG"),
                           height: ScreenUtil().setHeight(50),
                         ),
                         Image(
-                            image: const AssetImage(
-                                "assets/images/signUp/google.PNG"),
+                            image: const AssetImage("assets/images/signUp/google.PNG"),
                             height: ScreenUtil().setHeight(50)),
                         Image(
-                            image: const AssetImage(
-                                "assets/images/signUp/apple.PNG"),
+                            image: const AssetImage("assets/images/signUp/apple.PNG"),
                             height: ScreenUtil().setHeight(50)),
                       ],
                     ),
@@ -265,12 +253,11 @@ class _signUpState extends State<signUp> {
                     const Text("Already have an account?"),
                     TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, loginScreen.routeName);
+                          Navigator.pushNamed(context, LoginScreen.routeName);
                         },
                         child: const Text(
                           "sign In",
-                          style:
-                              TextStyle(color: Color.fromRGBO(2, 84, 100, 1)),
+                          style: TextStyle(color: Color.fromRGBO(2, 84, 100, 1)),
                         ))
                   ],
                 ),

@@ -2,16 +2,17 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:watches_store_team_4/View/signUp.dart';
+import 'package:watches_store_team_4/view/auth/sign_up.dart';
 
-class splashScreen extends StatelessWidget {
+class SplashScreen extends StatelessWidget {
   static const String routeName = 'splash screen';
+
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return AnimatedSplashScreen(
-      splash:  Stack(
+      splash: Stack(
         children: [
           const Center(
             child: Column(
@@ -55,7 +56,7 @@ class splashScreen extends StatelessWidget {
             child: Image(
               image: const AssetImage("assets/images/splashScreen/time1.png"),
               fit: BoxFit.cover,
-              height:ScreenUtil().setHeight(330),
+              height: ScreenUtil().setHeight(330),
             ),
           ),
           AnimatedPositioned(
@@ -71,7 +72,7 @@ class splashScreen extends StatelessWidget {
           ),
         ],
       ),
-      nextScreen: signUp(),
+      nextScreen: const SignUp(),
       duration: 1500,
       backgroundColor: const Color.fromRGBO(2, 84, 100, 1),
       pageTransitionType: PageTransitionType.rightToLeftWithFade,
@@ -79,9 +80,6 @@ class splashScreen extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class TransitionImage extends StatelessWidget {
   final String imagePath;
