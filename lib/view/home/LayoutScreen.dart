@@ -16,7 +16,7 @@ class LayOutScreen extends StatefulWidget {
 class _LayOutScreenState extends State<LayOutScreen> {
   int currentIndex = 0;
 
-  List<Widget> ScreenView = [
+  List<Widget> screenView = [
     const HomeScreen(),
     const ScanScreen(),
     const CartPage(),
@@ -26,7 +26,7 @@ class _LayOutScreenState extends State<LayOutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ScreenView[currentIndex],
+      body: screenView[currentIndex],
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30.0),

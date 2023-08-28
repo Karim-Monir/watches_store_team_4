@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:watches_store_team_4/View/Splash%20Screen.dart';
-import 'package:watches_store_team_4/View/login.dart';
-import 'package:watches_store_team_4/View/signUp.dart';
+import 'package:watches_store_team_4/View/auth/login.dart';
+import 'package:watches_store_team_4/View/auth/signUp.dart';
+import 'package:watches_store_team_4/View/splash/Splash%20Screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
       initialRoute: splashScreen.routeName,
       routes: {
         splashScreen.routeName: (_) => splashScreen(),
-        loginScreen.routeName: (_) => loginScreen(),
-        signUp.routeName: (_) => signUp(),
+        LoginScreen.routeName: (_) => const LoginScreen(),
+        SignUp.routeName: (_) => const SignUp(),
       },
     );
   }
