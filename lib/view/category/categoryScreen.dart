@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watches_store_team_4/view/category/widgets/customAppBar.dart';
 import 'package:watches_store_team_4/view/category/widgets/itemBuilder.dart';
-import 'package:watches_store_team_4/view/home/widgets/defultSearch.dart';
+import 'package:watches_store_team_4/view/home/widgets/default_search.dart';
 
 class CategoryScreen extends StatelessWidget {
   CategoryScreen({super.key, required this.title});
@@ -22,7 +22,7 @@ class CategoryScreen extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              const DefultSearch(),
+              const DefaultSearch(),
               SizedBox(
                 height: 670.h,
                 child: ListView.separated(

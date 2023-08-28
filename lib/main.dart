@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watches_store_team_4/View/auth/login.dart';
-import 'package:watches_store_team_4/View/auth/signUp.dart';
 import 'package:watches_store_team_4/View/splash/Splash%20Screen.dart';
+
+import 'View/auth/signUp.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
