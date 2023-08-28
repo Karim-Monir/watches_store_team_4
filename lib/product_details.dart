@@ -61,7 +61,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             decoration: const BoxDecoration(
               color: Color(0xFFF8F8F8),
               image: DecorationImage(
-                image: AssetImage("lib/assets/images/watch_1.png"),
+                image: AssetImage("assets/images/watch_1.png"),
                 fit: BoxFit.cover,
               ),
               boxShadow: [
@@ -229,7 +229,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         height: 52,
                         decoration: ShapeDecoration(
                           image: const DecorationImage(
-                            image: AssetImage("lib/assets/images/watch_3.png"),
+                            image: AssetImage("assetsimageswatch_3.png"),
                             fit: BoxFit.contain,
                           ),
                           color: Colors.white,
@@ -257,7 +257,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         height: 68,
                         decoration: ShapeDecoration(
                           image: const DecorationImage(
-                            image: AssetImage("lib/assets/images/watch_1.png"),
+                            image: AssetImage("assets/images/watch_1.png"),
                             fit: BoxFit.contain,
                           ),
                           color: Colors.white,
@@ -285,7 +285,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         height: 52,
                         decoration: ShapeDecoration(
                           image: const DecorationImage(
-                            image: AssetImage("lib/assets/images/watch_2.png"),
+                            image: AssetImage("assets/images/watch_2.png"),
                             fit: BoxFit.contain,
                           ),
                           color: Colors.white,
