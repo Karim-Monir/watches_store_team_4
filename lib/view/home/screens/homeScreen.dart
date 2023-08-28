@@ -52,10 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             "New\nCollection",
                             style: TextStyle(
-                                fontFamily: "Inter",
-                                fontSize: 28.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white),
+                                fontFamily: "Inter", fontSize: 28.sp, fontWeight: FontWeight.w700, color: Colors.white),
                           ),
                           SizedBox(
                             height: 10.h,
@@ -183,12 +180,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 400.h,
                   child: GridView.builder(
                       scrollDirection: Axis.vertical,
-                      gridDelegate:
-                          const SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 200,
-                              mainAxisExtent: 170,
-                              crossAxisSpacing: 10,
-                              mainAxisSpacing: 10),
+                      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                          maxCrossAxisExtent: 200, mainAxisExtent: 170, crossAxisSpacing: 10, mainAxisSpacing: 10),
                       itemCount: 4,
                       itemBuilder: (BuildContext ctx, index) {
                         return const WatchBuilder();
