@@ -11,7 +11,7 @@ class DefaultSearch extends StatelessWidget {
       children: [
         Container(
             width: 288.w,
-            height: 44.w,
+            height: 44.h,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
@@ -26,7 +26,7 @@ class DefaultSearch extends StatelessWidget {
                   )),
             )),
         SizedBox(
-          width: 8.w,
+          width: 10.w,
         ),
         Container(
           width: 44.w,
@@ -38,7 +38,7 @@ class DefaultSearch extends StatelessWidget {
           child: Image.asset(
             'assets/images/setting.png',
           ),
-        )
+        ),
       ],
     );
   }

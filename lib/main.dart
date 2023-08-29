@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watches_store_team_4/View/auth/login.dart';
 import 'package:watches_store_team_4/view/auth/sign_up.dart';
@@ -19,6 +20,13 @@ class MyApp extends StatelessWidget {
       designSize: const Size(390, 812), // Provide your design size
     );
     return MaterialApp(
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+          ),
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       builder: (context, child) {
         return MediaQuery(

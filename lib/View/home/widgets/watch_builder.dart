@@ -4,7 +4,8 @@ import 'package:iconly/iconly.dart';
 import 'package:watches_store_team_4/utils/constant.dart';
 
 class WatchBuilder extends StatefulWidget {
-  const WatchBuilder({super.key});
+  String photoPath;
+  WatchBuilder({super.key, required this.photoPath});
 
   @override
   State<WatchBuilder> createState() => _WatchBuilderState();
@@ -22,15 +23,16 @@ class _WatchBuilderState extends State<WatchBuilder> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Icon(Icons.add),
-                Image.asset('assets/images/watch2.png'),
+                SizedBox(width: 73.w, height: 120.h, child: Image.asset(widget.photoPath)),
                 GestureDetector(
-                    onTap: () async {
+                    onTap: () {
                       setState(() {
                         isFavorite = !isFavorite;
                       });
