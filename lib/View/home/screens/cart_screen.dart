@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -8,6 +10,14 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
+  int count = 1;
+  bool isLiked = false;
+  List<String> watches = [
+    'assets/images/watch2.png',
+    'assets/images/watch3.png',
+    'assets/images/watch4.png',
+    'assets/images/watch5.png'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +65,7 @@ class _CartPageState extends State<CartPage> {
               child: ListView.separated(
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 341,
+                    width: ScreenUtil().screenWidth,
                     height: 122,
                     decoration: ShapeDecoration(
                       color: Colors.white,
@@ -71,16 +81,140 @@ class _CartPageState extends State<CartPage> {
                         )
                       ],
                     ),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 75.w,
+                          child: Image.asset(watches[index]),
+                        ),
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Rolex Watch',
+                              style: TextStyle(
+                                color: Color(0xFF1F1F1F),
+                                fontSize: 16,
+                                fontFamily: 'Inter',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 37,
+                              height: 18,
+                              child: Text(
+                                '\$85',
+                                style: TextStyle(
+                                  color: Color(0xFF025464),
+                                  fontSize: 16,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  size: 20,
+                                  color: Colors.amberAccent,
+                                ),
+                                Text(
+                                  '4.9',
+                                  style: TextStyle(
+                                    color: Color(0xB21F1F1F),
+                                    fontSize: 14,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              right: 14,
+                              top: 15,
+                              bottom: 15,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconButton(
+                                  //visualDensity: VisualDensity.compact,
+                                  onPressed: () {
+                                    setState(() {
+                                      isLiked = !isLiked;
+                                    });
+                                  },
+                                  icon: isLiked == true
+                                      ? const Icon(
+                                          CupertinoIcons.heart_fill,
+                                          size: 20,
+                                          color: Colors.red,
+                                        )
+                                      : Icon(
+                                          CupertinoIcons.heart,
+                                          size: 20.sp,
+                                        ),
+                                ),
+                                Container(
+                                  width: 125.w,
+                                  height: 25.h,
+                                  decoration: ShapeDecoration(
+                                    color: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      side: BorderSide(width: 0.5.w, color: const Color(0xFF025464)),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      IconButton(
+                                        icon: Icon(
+                                          Icons.remove,
+                                          size: 10.sp,
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            count--;
+                                          });
+                                        },
+                                      ),
+                                      Text(count.toString()),
+                                      IconButton(
+                                          onPressed: () {
+                                            setState(() {
+                                              count++;
+                                            });
+                                          },
+                                          icon: Icon(
+                                            Icons.add,
+                                            size: 10.sp,
+                                          ))
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   );
                 },
-                separatorBuilder: (context, index) => const SizedBox(
-                  height: 20,
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 20.h,
                 ),
-                itemCount: 9,
+                itemCount: watches.length,
               ),
             ),
-            const SizedBox(
-              height: 47,
+            SizedBox(
+              height: 20.h,
             ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.start,
