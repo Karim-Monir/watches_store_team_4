@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -64,146 +65,168 @@ class _CartPageState extends State<CartPage> {
               height: 417,
               child: ListView.separated(
                 itemBuilder: (context, index) {
-                  return Container(
-                    width: ScreenUtil().screenWidth,
-                    height: 122,
-                    decoration: ShapeDecoration(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      shadows: const [
-                        BoxShadow(
-                          color: Color(0x3F000000),
-                          blurRadius: 4,
-                          offset: Offset(0, 4),
-                          spreadRadius: 0,
-                        )
+                  return Slidable(
+                    endActionPane: ActionPane(
+                      motion: const ScrollMotion(),
+                      dismissible: DismissiblePane(onDismissed: () {}),
+                      children: [
+                        SlidableAction(
+                          onPressed: (context) {},
+                          backgroundColor: const Color(0xFFFE4A49),
+                          foregroundColor: Colors.white,
+                          icon: Icons.delete,
+                          label: 'Delete',
+                        ),
+                        // SlidableAction(
+                        //   onPressed: (context) {},
+                        //   backgroundColor: const Color(0xFF21B7CA),
+                        //   foregroundColor: Colors.white,
+                        //   icon: Icons.share,
+                        //   label: 'Share',
+                        // ),
                       ],
                     ),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 75.w,
-                          child: Image.asset(watches[index]),
+                    child: Container(
+                      width: ScreenUtil().screenWidth,
+                      height: 122,
+                      decoration: ShapeDecoration(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Rolex Watch',
-                              style: TextStyle(
-                                color: Color(0xFF1F1F1F),
-                                fontSize: 16,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 37,
-                              height: 18,
-                              child: Text(
-                                '\$85',
+                        shadows: const [
+                          BoxShadow(
+                            color: Color(0x3F000000),
+                            blurRadius: 4,
+                            offset: Offset(0, 4),
+                            spreadRadius: 0,
+                          )
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 75.w,
+                            child: Image.asset(watches[index]),
+                          ),
+                          const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Rolex Watch',
                                 style: TextStyle(
-                                  color: Color(0xFF025464),
+                                  color: Color(0xFF1F1F1F),
                                   fontSize: 16,
                                   fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  size: 20,
-                                  color: Colors.amberAccent,
-                                ),
-                                Text(
-                                  '4.9',
+                              SizedBox(
+                                width: 37,
+                                height: 18,
+                                child: Text(
+                                  '\$85',
                                   style: TextStyle(
-                                    color: Color(0xB21F1F1F),
-                                    fontSize: 14,
-                                    fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF025464),
+                                    fontSize: 16,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              right: 14,
-                              top: 15,
-                              bottom: 15,
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                IconButton(
-                                  //visualDensity: VisualDensity.compact,
-                                  onPressed: () {
-                                    setState(() {
-                                      isLiked = !isLiked;
-                                    });
-                                  },
-                                  icon: isLiked == true
-                                      ? const Icon(
-                                          CupertinoIcons.heart_fill,
-                                          size: 20,
-                                          color: Colors.red,
-                                        )
-                                      : Icon(
-                                          CupertinoIcons.heart,
-                                          size: 20.sp,
-                                        ),
                                 ),
-                                Container(
-                                  width: 125.w,
-                                  height: 25.h,
-                                  decoration: ShapeDecoration(
-                                    color: Colors.white,
-                                    shape: RoundedRectangleBorder(
-                                      side: BorderSide(width: 0.5.w, color: const Color(0xFF025464)),
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    size: 20,
+                                    color: Colors.amberAccent,
                                   ),
-                                  child: Row(
-                                    children: [
-                                      IconButton(
-                                        icon: Icon(
-                                          Icons.remove,
-                                          size: 10.sp,
-                                        ),
-                                        onPressed: () {
-                                          setState(() {
-                                            count--;
-                                          });
-                                        },
+                                  Text(
+                                    '4.9',
+                                    style: TextStyle(
+                                      color: Color(0xB21F1F1F),
+                                      fontSize: 14,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                right: 14,
+                                top: 15,
+                                bottom: 15,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  IconButton(
+                                    //visualDensity: VisualDensity.compact,
+                                    onPressed: () {
+                                      setState(() {
+                                        isLiked = !isLiked;
+                                      });
+                                    },
+                                    icon: isLiked == true
+                                        ? const Icon(
+                                            CupertinoIcons.heart_fill,
+                                            size: 20,
+                                            color: Colors.red,
+                                          )
+                                        : Icon(
+                                            CupertinoIcons.heart,
+                                            size: 20.sp,
+                                          ),
+                                  ),
+                                  Container(
+                                    width: 125.w,
+                                    height: 25.h,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(width: 0.5.w, color: const Color(0xFF025464)),
+                                        borderRadius: BorderRadius.circular(20),
                                       ),
-                                      Text(count.toString()),
-                                      IconButton(
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        IconButton(
+                                          icon: Icon(
+                                            Icons.remove,
+                                            size: 10.sp,
+                                          ),
                                           onPressed: () {
                                             setState(() {
-                                              count++;
+                                              count--;
                                             });
                                           },
-                                          icon: Icon(
-                                            Icons.add,
-                                            size: 10.sp,
-                                          ))
-                                    ],
+                                        ),
+                                        Text(count.toString()),
+                                        IconButton(
+                                            onPressed: () {
+                                              setState(() {
+                                                count++;
+                                              });
+                                            },
+                                            icon: Icon(
+                                              Icons.add,
+                                              size: 10.sp,
+                                            ))
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },

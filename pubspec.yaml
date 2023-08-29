@@ -39,6 +39,7 @@ dependencies:
   page_transition: ^2.0.9
   flutter_screenutil: ^5.9.0
   iconly: ^1.0.1
+  flutter_slidable: ^3.0.0
 
 
 dev_dependencies:
