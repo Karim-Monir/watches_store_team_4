@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CartPage extends StatefulWidget {
@@ -20,12 +19,15 @@ class _CartPageState extends State<CartPage> {
               height: 52,
             ),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               //mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   icon: const Icon(
-                    CupertinoIcons.back,
+                    Icons.arrow_back_ios,
                     size: 20,
                   ),
                 ),

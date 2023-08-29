@@ -25,9 +25,11 @@ class _ProductDetailsState extends State<ProductDetails> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   icon: const Icon(
-                    CupertinoIcons.back,
+                    Icons.arrow_back_ios,
                     size: 20,
                   ),
                 ),
@@ -53,11 +55,11 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
           ),
           const SizedBox(
-            height: 17,
+            height: 10,
           ),
           Container(
             width: 206,
-            height: 315,
+            height: 300,
             decoration: const BoxDecoration(
               color: Color(0xFFF8F8F8),
               image: DecorationImage(
@@ -87,23 +89,24 @@ class _ProductDetailsState extends State<ProductDetails> {
                       right: 24,
                     ),
                     width: MediaQuery.of(context).size.width,
-                    height: 430,
+                    height: 320,
                     decoration: const ShapeDecoration(
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40),
-                          bottomLeft: Radius.circular(19),
-                          bottomRight: Radius.circular(19),
+                          // bottomLeft: Radius.circular(19),
+                          // bottomRight: Radius.circular(19),
                         ),
                       ),
                     ),
                     child: Column(
+                      mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(
-                          height: 66,
+                          height: 65,
                         ),
                         const Text(
                           'Rolex Black watch',
@@ -152,7 +155,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           ),
                         ),
                         const SizedBox(
-                          height: 44,
+                          height: 30,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
