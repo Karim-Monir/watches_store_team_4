@@ -20,13 +20,6 @@ class MyApp extends StatelessWidget {
       designSize: const Size(390, 812), // Provide your design size
     );
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-          ),
-        ),
-      ),
       debugShowCheckedModeBanner: false,
       builder: (context, child) {
         return MediaQuery(
