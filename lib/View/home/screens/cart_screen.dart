@@ -42,15 +42,15 @@ class _CartPageState extends State<CartPage> {
                     size: 20,
                   ),
                 ),
-                const SizedBox(
-                  width: 84,
+                SizedBox(
+                  width: 84.w,
                 ),
-                const Center(
+                Center(
                   child: Text(
                     'My order',
                     style: TextStyle(
-                      color: Color(0xFF1F1F1F),
-                      fontSize: 28,
+                      color: const Color(0xFF1F1F1F),
+                      fontSize: 28.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w500,
                     ),
@@ -58,11 +58,11 @@ class _CartPageState extends State<CartPage> {
                 )
               ],
             ),
-            const SizedBox(
-              height: 14,
+            SizedBox(
+              height: 14.h,
             ),
             SizedBox(
-              height: 417,
+              height: 417.h,
               child: ListView.separated(
                 itemBuilder: (context, index) {
                   return Slidable(
@@ -109,15 +109,15 @@ class _CartPageState extends State<CartPage> {
                             width: 75.w,
                             child: Image.asset(watches[index]),
                           ),
-                          const Column(
+                          Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 'Rolex Watch',
                                 style: TextStyle(
-                                  color: Color(0xFF1F1F1F),
-                                  fontSize: 16,
+                                  color: const Color(0xFF1F1F1F),
+                                  fontSize: 16.sp,
                                   fontFamily: 'Inter',
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -128,8 +128,8 @@ class _CartPageState extends State<CartPage> {
                                 child: Text(
                                   '\$85',
                                   style: TextStyle(
-                                    color: Color(0xFF025464),
-                                    fontSize: 16,
+                                    color: const Color(0xFF025464),
+                                    fontSize: 16.sp,
                                     fontFamily: 'Inter',
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -137,7 +137,7 @@ class _CartPageState extends State<CartPage> {
                               ),
                               Row(
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.star,
                                     size: 20,
                                     color: Colors.amberAccent,
@@ -145,8 +145,8 @@ class _CartPageState extends State<CartPage> {
                                   Text(
                                     '4.9',
                                     style: TextStyle(
-                                      color: Color(0xB21F1F1F),
-                                      fontSize: 14,
+                                      color: const Color(0xB21F1F1F),
+                                      fontSize: 14.sp,
                                       fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -164,7 +164,8 @@ class _CartPageState extends State<CartPage> {
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.end,
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   IconButton(
                                     //visualDensity: VisualDensity.compact,
@@ -190,7 +191,9 @@ class _CartPageState extends State<CartPage> {
                                     decoration: ShapeDecoration(
                                       color: Colors.white,
                                       shape: RoundedRectangleBorder(
-                                        side: BorderSide(width: 0.5.w, color: const Color(0xFF025464)),
+                                        side: BorderSide(
+                                            width: 0.5.w,
+                                            color: const Color(0xFF025464)),
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                     ),
@@ -239,31 +242,31 @@ class _CartPageState extends State<CartPage> {
             SizedBox(
               height: 20.h,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
                   'Order Summary',
                   style: TextStyle(
-                    color: Color(0xFF1F1F1F),
-                    fontSize: 24,
+                    color: const Color(0xFF1F1F1F),
+                    fontSize: 24.sp,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 19,
+            SizedBox(
+              height: 19.h,
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Subtotal',
                   style: TextStyle(
-                    color: Color(0xE51F1F1F),
-                    fontSize: 20,
+                    color: const Color(0xE51F1F1F),
+                    fontSize: 20.sp,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
                   ),
@@ -271,22 +274,22 @@ class _CartPageState extends State<CartPage> {
                 Text(
                   '\$248',
                   style: TextStyle(
-                    color: Color(0xFF025464),
-                    fontSize: 20,
+                    color: const Color(0xFF025464),
+                    fontSize: 20.sp,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w700,
                   ),
                 ),
               ],
             ),
-            const SizedBox(
-              height: 48,
+            SizedBox(
+              height: 48.h,
             ),
             InkWell(
               onTap: () {},
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 39,
+                height: 39.h,
                 padding: const EdgeInsets.all(10),
                 decoration: ShapeDecoration(
                   color: const Color(0xFF025464),
@@ -294,12 +297,12 @@ class _CartPageState extends State<CartPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Center(
+                child: Center(
                   child: Text(
                     'Checkout',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w700,
                     ),
