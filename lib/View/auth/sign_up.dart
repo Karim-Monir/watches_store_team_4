@@ -51,7 +51,9 @@ class _SignUpState extends State<SignUp> {
             top: 40,
           ),
           child: Text("Create Account",
-              style: TextStyle(color: const Color.fromRGBO(2, 84, 100, 1), fontSize: ScreenUtil().setSp(30))),
+              style: TextStyle(
+                  color: const Color.fromRGBO(2, 84, 100, 1),
+                  fontSize: ScreenUtil().setSp(30))),
         ),
       ),
       body: SingleChildScrollView(
@@ -148,14 +150,16 @@ class _SignUpState extends State<SignUp> {
                         ? IconButton(
                             onPressed: () {
                               setState(() {
-                                isConfirmPasswordVisible = !isConfirmPasswordVisible;
+                                isConfirmPasswordVisible =
+                                    !isConfirmPasswordVisible;
                               });
                             },
                             icon: const Icon(Icons.remove_red_eye_outlined))
                         : IconButton(
                             onPressed: () {
                               setState(() {
-                                isConfirmPasswordVisible = !isConfirmPasswordVisible;
+                                isConfirmPasswordVisible =
+                                    !isConfirmPasswordVisible;
                               });
                             },
                             icon: const Icon(
@@ -181,7 +185,8 @@ class _SignUpState extends State<SignUp> {
                       onChanged: (bool? newValue) {
                         setState(() {
                           value = newValue!;
-                          isChecked = false; // Reset validation flag when Checkbox value changes
+                          isChecked =
+                              false; // Reset validation flag when Checkbox value changes
                         });
                       },
                     ),
@@ -206,15 +211,18 @@ class _SignUpState extends State<SignUp> {
                     if (formKey.currentState!.validate() && isChecked) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const LayOutScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const LayOutScreen()),
                       );
                     }
                   },
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16)),
                   color: const Color.fromRGBO(2, 84, 100, 1),
                   minWidth: double.infinity,
                   height: ScreenUtil().setHeight(45),
-                  child: const Text("Sign Up", style: TextStyle(color: Colors.white)),
+                  child: const Text("Sign Up",
+                      style: TextStyle(color: Colors.white)),
                 ),
                 SizedBox(
                   height: ScreenUtil().setHeight(15),
@@ -222,7 +230,8 @@ class _SignUpState extends State<SignUp> {
                 //facebook, google & apple
                 Column(
                   children: [
-                    const Image(image: AssetImage("assets/images/signUp/or.png")),
+                    const Image(
+                        image: AssetImage("assets/images/signUp/or.png")),
                     SizedBox(
                       height: ScreenUtil().setHeight(15),
                     ),
@@ -230,14 +239,17 @@ class _SignUpState extends State<SignUp> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image(
-                          image: const AssetImage("assets/images/signUp/facebook.PNG"),
+                          image: const AssetImage(
+                              "assets/images/signUp/facebook.PNG"),
                           height: ScreenUtil().setHeight(50),
                         ),
                         Image(
-                            image: const AssetImage("assets/images/signUp/google.PNG"),
+                            image: const AssetImage(
+                                "assets/images/signUp/google.PNG"),
                             height: ScreenUtil().setHeight(50)),
                         Image(
-                            image: const AssetImage("assets/images/signUp/apple.PNG"),
+                            image: const AssetImage(
+                                "assets/images/signUp/apple.PNG"),
                             height: ScreenUtil().setHeight(50)),
                       ],
                     ),
@@ -257,7 +269,8 @@ class _SignUpState extends State<SignUp> {
                         },
                         child: const Text(
                           "sign In",
-                          style: TextStyle(color: Color.fromRGBO(2, 84, 100, 1)),
+                          style:
+                              TextStyle(color: Color.fromRGBO(2, 84, 100, 1)),
                         ))
                   ],
                 ),
