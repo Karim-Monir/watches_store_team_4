@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watches_store_team_4/view/PaymentSuccess_Screen.dart';
 import 'package:watches_store_team_4/view/home/LayoutScreen.dart';
+import 'package:watches_store_team_4/view/home/screens/profileScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: PaymentSuccessScreen(),
+          home: LayOutScreen(),
         );
       },
     );

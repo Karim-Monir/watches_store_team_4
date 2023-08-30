@@ -20,7 +20,7 @@ class _LayOutScreenState extends State<LayOutScreen> {
     const HomeScreen(),
     const ScanScreen(),
     const CartScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override
