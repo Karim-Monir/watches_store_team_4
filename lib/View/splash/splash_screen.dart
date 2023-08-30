@@ -56,7 +56,7 @@ class SplashScreen extends StatelessWidget {
             child: Image(
               image: const AssetImage("assets/images/splashScreen/time1.png"),
               fit: BoxFit.cover,
-              height: ScreenUtil().setHeight(330),
+              height: ScreenUtil().setHeight(340),
             ),
           ),
           AnimatedPositioned(
@@ -67,7 +67,7 @@ class SplashScreen extends StatelessWidget {
             child: Image(
               image: const AssetImage("assets/images/splashScreen/time2.png"),
               fit: BoxFit.cover,
-              height: ScreenUtil().setHeight(330),
+              height: ScreenUtil().setHeight(350),
             ),
           ),
         ],
@@ -76,7 +76,7 @@ class SplashScreen extends StatelessWidget {
       duration: 1500,
       backgroundColor: const Color.fromRGBO(2, 84, 100, 1),
       pageTransitionType: PageTransitionType.rightToLeftWithFade,
-      splashIconSize: ScreenUtil().setWidth(700),
+      splashIconSize: ScreenUtil().setWidth(800),
     );
   }
 }

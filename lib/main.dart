@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watches_store_team_4/View/auth/login.dart';
+import 'package:watches_store_team_4/View/home/screens/card_screen.dart';
 import 'package:watches_store_team_4/view/auth/sign_up.dart';
 import 'package:watches_store_team_4/view/splash/splash_screen.dart';
 
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         SplashScreen.routeName: (_) => const SplashScreen(),
         LoginScreen.routeName: (_) => const LoginScreen(),
         SignUp.routeName: (_) => const SignUp(),
+        cardScreen.routeName : (_) => cardScreen(),
       },
     );
   }
