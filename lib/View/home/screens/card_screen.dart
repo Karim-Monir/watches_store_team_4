@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class cardScreen extends StatelessWidget {
+class cardScreen extends StatefulWidget {
   static const String routeName = "card screen";
+
+  @override
+  State<cardScreen> createState() => _cardScreenState();
+}
+
+class _cardScreenState extends State<cardScreen> {
   var formKey = GlobalKey<FormState>();
+
   var cardNumberController = TextEditingController();
+
   var expirationDateController = TextEditingController();
+
   var cardholderNameController = TextEditingController();
+
   var cvvNumberController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      initialRoute: SplashScreen.routeName,
+      initialRoute: cardScreen.routeName,
       routes: {
         SplashScreen.routeName: (_) => const SplashScreen(),
         LoginScreen.routeName: (_) => const LoginScreen(),
