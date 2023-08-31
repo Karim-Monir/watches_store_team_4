@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:watches_store_team_4/View/checkout_screen/checkout.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({super.key});
@@ -190,23 +191,33 @@ class _ProductDetailsState extends State<ProductDetails> {
                             const SizedBox(
                               width: 22,
                             ),
-                            Container(
-                              width: 163,
-                              height: 54,
-                              decoration: ShapeDecoration(
-                                color: const Color(0xFF025464),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const CheckoutScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width: 163,
+                                height: 54,
+                                decoration: ShapeDecoration(
+                                  color: const Color(0xFF025464),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
                                 ),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  'Buy Now',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w600,
+                                child: const Center(
+                                  child: Text(
+                                    'Buy Now',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24,
+                                      fontFamily: 'Inter',
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ),
                               ),

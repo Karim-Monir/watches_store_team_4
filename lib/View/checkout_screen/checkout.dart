@@ -2,7 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:watches_store_team_4/View/orders/orders_screen.dart';
+
+import '../PaymentSuccess_Screen.dart';
+import '../home/screens/card_screen.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -230,7 +232,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CardScreen(),
+                  ),
+                );
+              },
               child: Column(
                 children: [
                   Row(
@@ -291,7 +300,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const OrdersScreen()),
+                MaterialPageRoute(builder: (context) => const PaymentSuccessScreen()),
               );
             },
             child: Container(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:watches_store_team_4/View/home/layout_screen.dart';
+import 'package:watches_store_team_4/View/orders/orders_screen.dart';
 import 'package:watches_store_team_4/utils/constant.dart';
 
 class PaymentSuccessScreen extends StatelessWidget {
@@ -30,7 +32,12 @@ class PaymentSuccessScreen extends StatelessWidget {
               height: 39.h,
               width: 342.w,
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const OrdersScreen()),
+                  );
+                },
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 color: const Color.fromRGBO(2, 84, 100, 1),
                 child: const Text(
@@ -48,11 +55,18 @@ class PaymentSuccessScreen extends StatelessWidget {
               height: 39.h,
               width: 342.w,
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LayOutScreen(),
+                    ),
+                  );
+                },
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 color: Colors.white,
                 child: const Text(
-                  "Track Order Status",
+                  "Back To Home",
                   style: TextStyle(
                     fontFamily: "Inter",
                     fontSize: 16,
