@@ -36,28 +36,35 @@ class _CartPageState extends State<CartPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back_ios,
-                      size: 20,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 84.w,
-                  ),
-                  Center(
-                    child: Text(
-                      'My order',
-                      style: TextStyle(
-                        color: const Color(0xFF1F1F1F),
-                        fontSize: 28.sp,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
+                  Expanded(
+                    flex: 1,
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        size: 20,
                       ),
                     ),
+                  ),
+                  Expanded(
+                    flex: 8,
+                    child: Center(
+                      child: Text(
+                        'My order',
+                        style: TextStyle(
+                          color: const Color(0xFF1F1F1F),
+                          fontSize: 28.sp,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(),
                   )
                 ],
               ),
@@ -80,13 +87,6 @@ class _CartPageState extends State<CartPage> {
                             icon: Icons.delete,
                             label: 'Delete',
                           ),
-                          // SlidableAction(
-                          //   onPressed: (context) {},
-                          //   backgroundColor: const Color(0xFF21B7CA),
-                          //   foregroundColor: Colors.white,
-                          //   icon: Icons.share,
-                          //   label: 'Share',
-                          // ),
                         ],
                       ),
                       child: Container(
@@ -112,9 +112,12 @@ class _CartPageState extends State<CartPage> {
                               width: 75.w,
                               child: Image.asset(watches[index]),
                             ),
+                            SizedBox(
+                              width: 14.w,
+                            ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Text(
                                   'Rolex Watch',
@@ -188,7 +191,7 @@ class _CartPageState extends State<CartPage> {
                                             ),
                                     ),
                                     Container(
-                                      width: 125.w,
+                                      width: 75.w,
                                       height: 25.h,
                                       decoration: ShapeDecoration(
                                         color: Colors.white,
@@ -199,28 +202,36 @@ class _CartPageState extends State<CartPage> {
                                       ),
                                       child: Row(
                                         children: [
-                                          IconButton(
-                                            icon: Icon(
-                                              Icons.remove,
-                                              size: 10.sp,
-                                            ),
-                                            onPressed: () {
-                                              setState(() {
-                                                count--;
-                                              });
-                                            },
-                                          ),
-                                          Text(count.toString()),
-                                          IconButton(
+                                          Expanded(
+                                            flex: 1,
+                                            child: IconButton(
+                                              icon: Icon(
+                                                Icons.remove,
+                                                size: 10.sp,
+                                              ),
                                               onPressed: () {
                                                 setState(() {
-                                                  count++;
+                                                  count--;
                                                 });
                                               },
-                                              icon: Icon(
-                                                Icons.add,
-                                                size: 10.sp,
-                                              ))
+                                            ),
+                                          ),
+                                          Expanded(flex: 1, child: Center(child: Text(count.toString()))),
+                                          Expanded(
+                                            flex: 1,
+                                            child: Center(
+                                              child: IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      count++;
+                                                    });
+                                                  },
+                                                  icon: Icon(
+                                                    Icons.add,
+                                                    size: 10.sp,
+                                                  )),
+                                            ),
+                                          )
                                         ],
                                       ),
                                     ),

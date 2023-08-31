@@ -4,11 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:watches_store_team_4/utils/constant.dart';
 
 class ProfileItemBuilder extends StatelessWidget {
-  ProfileItemBuilder(
-      {super.key,
-      required this.icon,
-      required this.description,
-      required this.title});
+  ProfileItemBuilder({super.key, required this.icon, required this.description, required this.title});
   String title;
   String description;
   Widget icon;
@@ -21,7 +17,7 @@ class ProfileItemBuilder extends StatelessWidget {
           height: 33.h,
           width: 33.w,
           decoration: BoxDecoration(
-            color: AppStyle.kmainColor,
+            color: AppStyle.kMainColor,
             borderRadius: BorderRadius.circular(8),
           ),
           child: SizedBox(height: 16.h, width: 16.w, child: icon),

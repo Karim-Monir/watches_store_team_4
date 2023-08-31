@@ -26,22 +26,16 @@ class PaymentSuccessScreen extends StatelessWidget {
               ),
             ),
             Container(
-              decoration:
-                  const BoxDecoration(boxShadow: [AppStyle.defultBoxShadow]),
+              decoration: const BoxDecoration(boxShadow: [AppStyle.defaultBoxShadow]),
               height: 39.h,
               width: 342.w,
               child: MaterialButton(
                 onPressed: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 color: const Color.fromRGBO(2, 84, 100, 1),
                 child: const Text(
                   "Track Order Status",
-                  style: TextStyle(
-                      fontFamily: "Inter",
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white),
+                  style: TextStyle(fontFamily: "Inter", fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white),
                   textAlign: TextAlign.left,
                 ),
               ),
@@ -50,14 +44,12 @@ class PaymentSuccessScreen extends StatelessWidget {
               height: 15.h,
             ),
             Container(
-              decoration:
-                  const BoxDecoration(boxShadow: [AppStyle.defultBoxShadow]),
+              decoration: const BoxDecoration(boxShadow: [AppStyle.defaultBoxShadow]),
               height: 39.h,
               width: 342.w,
               child: MaterialButton(
                 onPressed: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 color: Colors.white,
                 child: const Text(
                   "Track Order Status",
