@@ -332,7 +332,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
                       decoration: ShapeDecoration(
                         color: Colors.white,
                         shape: RoundedRectangleBorder(
-                          side: BorderSide(),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         shadows: const [
