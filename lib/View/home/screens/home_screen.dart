@@ -32,15 +32,15 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 52.h,
             ),
-            Padding(
-                padding: EdgeInsets.only(left: 26.w),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    size: 20.sp,
-                  ),
-                )),
+            // Padding(
+            //     padding: EdgeInsets.only(left: 26.w),
+            //     child: GestureDetector(
+            //       onTap: () {},
+            //       child: Icon(
+            //         Icons.arrow_back_ios,
+            //         size: 20.sp,
+            //       ),
+            //     )),
             SizedBox(
               height: 12.h,
             ),
