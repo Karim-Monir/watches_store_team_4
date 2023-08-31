@@ -12,13 +12,9 @@ class CardScreen extends StatefulWidget {
 
 class _CardScreenState extends State<CardScreen> {
   var formKey = GlobalKey<FormState>();
-
   var cardNumberController = TextEditingController();
-
   var expirationDateController = TextEditingController();
-
   var cardholderNameController = TextEditingController();
-
   var cvvNumberController = TextEditingController();
 
   @override
@@ -32,16 +28,27 @@ class _CardScreenState extends State<CardScreen> {
               children: [
                 Row(
                   children: [
-                    IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(Icons.arrow_back_ios_outlined, color: Colors.black),
+                    Expanded(
+                      flex: 1,
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(Icons.arrow_back_ios_outlined, color: Colors.black),
+                      ),
                     ),
-                    SizedBox(
-                      width: 80.w,
-                    ),
-                    Text("My Card", style: TextStyle(fontSize: 28.sp, color: const Color.fromRGBO(31, 31, 31, 1))),
+                    // SizedBox(
+                    //   width: 80.w,
+                    // ),
+                    Expanded(
+                        flex: 8,
+                        child: Center(
+                            child: Text("My Card",
+                                style: TextStyle(fontSize: 28.sp, color: const Color.fromRGBO(31, 31, 31, 1))))),
+                    Expanded(
+                      flex: 1,
+                      child: Container(),
+                    )
                   ],
                 ),
                 const Divider(thickness: 1, color: Colors.black),
