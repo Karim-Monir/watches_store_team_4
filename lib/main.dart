@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      initialRoute: LoginScreen.routeName,
+      initialRoute: SignUp.routeName,
       routes: {
         SplashScreen.routeName: (_) => const SplashScreen(),
         LoginScreen.routeName: (_) => const LoginScreen(),
