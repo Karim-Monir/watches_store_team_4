@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:watches_store_team_4/View/checkout_screen/checkout.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -123,8 +124,13 @@ class _CartPageState extends State<CartPage> {
             const SizedBox(
               height: 48,
             ),
-            InkWell(
-              onTap: () {},
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CheckoutScreen()),
+                );
+              },
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 39,

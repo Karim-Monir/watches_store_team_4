@@ -25,182 +25,187 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 44.h,
-          ),
-          Padding(
-              padding: EdgeInsets.only(left: 26.w),
-              child: GestureDetector(
-                onTap: () {},
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  size: 20.sp,
-                ),
-              )),
-          SizedBox(
-            height: 12.h,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const DefaultSearch(),
-                SizedBox(
-                  height: 24.h,
-                ),
-                Stack(
-                  alignment: Alignment.centerRight,
-                  children: [
-                    Image.asset('assets/images/background.png'),
-                    Positioned(
-                      left: 10,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "New\nCollection",
-                            style: TextStyle(
-                                fontFamily: "Inter", fontSize: 28.sp, fontWeight: FontWeight.w700, color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: 9.h,
-                          ),
-                          SizedBox(
-                            width: 170.w,
-                            height: 46.h,
-                            child: Text(
-                              'collection offers a wide range of prestigious, high-precision timepieces',
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 44.h,
+            ),
+            Padding(
+                padding: EdgeInsets.only(left: 26.w),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 20.sp,
+                  ),
+                )),
+            SizedBox(
+              height: 12.h,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const DefaultSearch(),
+                  SizedBox(
+                    height: 24.h,
+                  ),
+                  Stack(
+                    alignment: Alignment.centerRight,
+                    children: [
+                      Image.asset('assets/images/background.png'),
+                      Positioned(
+                        left: 10,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "New\nCollection",
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.800000011920929),
-                                fontSize: 12,
-                                fontFamily: 'Inter',
-                                fontWeight: FontWeight.w400,
+                                  fontFamily: "Inter",
+                                  fontSize: 28.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white),
+                            ),
+                            SizedBox(
+                              height: 9.h,
+                            ),
+                            SizedBox(
+                              width: 170.w,
+                              height: 46.h,
+                              child: Text(
+                                'collection offers a wide range of prestigious, high-precision timepieces',
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.800000011920929),
+                                  fontSize: 12,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 17.h,
-                          ),
-                          Container(
-                            width: 96.w,
-                            height: 33.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(
-                                  color: Colors.white,
-                                )),
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Center(
-                                child: Text(
-                                  "Shop now",
-                                  style: TextStyle(
-                                    fontFamily: "Inter",
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w500,
+                            SizedBox(
+                              height: 17.h,
+                            ),
+                            Container(
+                              width: 96.w,
+                              height: 33.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
                                     color: Colors.white,
+                                  )),
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: Center(
+                                  child: Text(
+                                    "Shop now",
+                                    style: TextStyle(
+                                      fontFamily: "Inter",
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                    ),
+                                    textAlign: TextAlign.left,
                                   ),
-                                  textAlign: TextAlign.left,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        right: -5,
+                        bottom: -20,
+                        top: -40,
+                        child: Image.asset(
+                          'assets/images/watch1.png',
+                          width: 210.w,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 24.h,
+                  ),
+                  SizedBox(
+                    height: 35.h,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              tileIndex = index;
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 4.w),
+                            width: tileIndex == index ? 74 : 90,
+                            height: tileIndex == index ? 35 : 34,
+                            decoration: ShapeDecoration(
+                              color: tileIndex == index ? const Color(0xFF025464) : Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              shadows: const [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 4,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                tiles[index],
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(
+                                  color: tileIndex == index ? Colors.white : const Color(0xCC1F1F1F),
+                                  fontSize: tileIndex == index ? 20.sp : 16.sp,
+                                  fontFamily: 'Inter',
+                                  fontWeight: tileIndex == index ? FontWeight.w500 : FontWeight.w400,
                                 ),
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    Positioned(
-                      right: -5,
-                      bottom: -20,
-                      top: -40,
-                      child: Image.asset(
-                        'assets/images/watch1.png',
-                        width: 210.w,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 28.h,
-                ),
-                SizedBox(
-                  height: 35.h,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            tileIndex = index;
-                          });
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 4.w),
-                          width: tileIndex == index ? 74 : 90,
-                          height: tileIndex == index ? 35 : 34,
-                          decoration: ShapeDecoration(
-                            color: tileIndex == index ? const Color(0xFF025464) : Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            shadows: const [
-                              BoxShadow(
-                                color: Color(0x3F000000),
-                                blurRadius: 4,
-                                offset: Offset(0, 4),
-                                spreadRadius: 0,
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              tiles[index],
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style: TextStyle(
-                                color: tileIndex == index ? Colors.white : const Color(0xCC1F1F1F),
-                                fontSize: tileIndex == index ? 20.sp : 16.sp,
-                                fontFamily: 'Inter',
-                                fontWeight: tileIndex == index ? FontWeight.w500 : FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                    separatorBuilder: (context, index) => SizedBox(
-                      width: 16.w,
-                    ),
-                    itemCount: tiles.length,
-                  ),
-                ),
-                SizedBox(
-                  height: 24.h,
-                ),
-                AppStyle.defaultText(text: "Popular Item"),
-                SizedBox(
-                  height: 12.h,
-                ),
-                SizedBox(
-                  height: 252.h,
-                  child: GridView.builder(
-                      scrollDirection: Axis.vertical,
-                      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 200, mainAxisExtent: 170, crossAxisSpacing: 10, mainAxisSpacing: 10),
-                      itemCount: watches.length,
-                      itemBuilder: (context, index) {
-                        return WatchBuilder(
-                          photoPath: watches[index],
                         );
-                      }),
-                ),
-              ],
+                      },
+                      separatorBuilder: (context, index) => SizedBox(
+                        width: 16.w,
+                      ),
+                      itemCount: tiles.length,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24.h,
+                  ),
+                  AppStyle.defaultText(text: "Popular Item"),
+                  SizedBox(
+                    height: 12.h,
+                  ),
+                  SizedBox(
+                    height: 250.h,
+                    child: GridView.builder(
+                        scrollDirection: Axis.vertical,
+                        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 200, mainAxisExtent: 170, crossAxisSpacing: 10, mainAxisSpacing: 10),
+                        itemCount: watches.length,
+                        itemBuilder: (context, index) {
+                          return WatchBuilder(
+                            photoPath: watches[index],
+                          );
+                        }),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

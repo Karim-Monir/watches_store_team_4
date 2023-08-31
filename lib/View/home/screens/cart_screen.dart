@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
+import '../../checkout_screen/checkout.dart';
+
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
 
@@ -283,7 +285,12 @@ class _CartPageState extends State<CartPage> {
               height: 48,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CheckoutScreen()),
+                );
+              },
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 39,
