@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
+import '../../checkout_screen/checkout.dart';
+
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
 
@@ -110,7 +112,7 @@ class _CartPageState extends State<CartPage> {
                             width: 75.w,
                             child: Image.asset(watches[index]),
                           ),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -287,8 +289,12 @@ class _CartPageState extends State<CartPage> {
               height: 48.h,
               ),
               InkWell(
-                onTap: () {},
-                child: Container(
+                onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CheckoutScreen()),
+                );
+              },child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 39.h,
                   padding: const EdgeInsets.all(10),

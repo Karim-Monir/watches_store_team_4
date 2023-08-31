@@ -32,18 +32,18 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: 44.h,
             ),
-            // Padding(
-            //     padding: EdgeInsets.only(left: 26.w),
-            //     child: GestureDetector(
-            //       onTap: () {},
-            //       child: Icon(
-            //         Icons.arrow_back_ios,
-            //         size: 20.sp,
-            //       ),
-            //     )),
-            // SizedBox(
-            //   height: 12.h,
-            // ),
+            Padding(
+                padding: EdgeInsets.only(left: 26.w),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 20.sp,
+                  ),
+                )),
+            SizedBox(
+              height: 12.h,
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Column(
@@ -128,11 +128,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: 25.h,
+                    height: 24.h,
                   ),
                   SizedBox(
-                    height: 40.h,
-                    width: double.infinity,
+                    height: 35.h,
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
@@ -142,40 +141,42 @@ class _HomeScreenState extends State<HomeScreen> {
                               tileIndex = index;
                             });
                           },
-                          child: Column(
-                            children: [
-                              Container(
-                                // padding: EdgeInsets.symmetric(horizontal: 4.w),
-                                width: tileIndex == index ? 130 : 74,
-                                height: tileIndex == index ? 35 : 34,
-                                decoration: BoxDecoration(
-                                  boxShadow: const [AppStyle.defaultBoxShadow],
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: tileIndex == index ? const Color(0xFF025464) : Colors.white,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 4.w),
+                            width: tileIndex == index ? 74 : 90,
+                            height: tileIndex == index ? 35 : 34,
+                            decoration: ShapeDecoration(
+                              color: tileIndex == index ? const Color(0xFF025464) : Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              shadows: const [
+                                BoxShadow(
+                                  color: Color(0x3F000000),
+                                  blurRadius: 4,
+                                  offset: Offset(0, 4),
+                                  spreadRadius: 0,
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    tiles[index],
-                                    // overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                    style: TextStyle(
-                                      color: tileIndex == index ? Colors.white : const Color(0xCC1F1F1F),
-                                      fontSize: tileIndex == index ? 20.sp : 16.sp,
-                                      fontFamily: 'Inter',
-                                      fontWeight: tileIndex == index ? FontWeight.w500 : FontWeight.w400,
-                                    ),
-                                  ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                tiles[index],
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(
+                                  color: tileIndex == index ? Colors.white : const Color(0xCC1F1F1F),
+                                  fontSize: tileIndex == index ? 20.sp : 16.sp,
+                                  fontFamily: 'Inter',
+                                  fontWeight: tileIndex == index ? FontWeight.w500 : FontWeight.w400,
                                 ),
                               ),
-                              SizedBox(
-                                height: 5.h,
-                              ),
-                            ],
+                            ),
                           ),
                         );
                       },
                       separatorBuilder: (context, index) => SizedBox(
-                        width: 10.w,
+                        width: 16.w,
                       ),
                       itemCount: tiles.length,
                     ),
@@ -185,7 +186,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   AppStyle.defaultText(text: "Popular Item"),
                   SizedBox(
-                    height: 290.h,
+                    height: 12.h,
+                  ),
+                  SizedBox(
+                    height: 250.h,
                     child: GridView.builder(
                         scrollDirection: Axis.vertical,
                         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
