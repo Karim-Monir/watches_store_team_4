@@ -27,6 +27,9 @@ class PaymentSuccessScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
+            SizedBox(
+              height: 52.h,
+            ),
             Container(
               decoration: const BoxDecoration(boxShadow: [AppStyle.defaultBoxShadow]),
               height: 39.h,
