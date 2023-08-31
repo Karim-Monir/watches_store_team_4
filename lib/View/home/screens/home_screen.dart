@@ -79,8 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 'collection offers a wide range of prestigious, high-precision timepieces',
                                 style: TextStyle(
-                                  color: Colors.white
-                                      .withOpacity(0.800000011920929),
+                                  color: Colors.white.withOpacity(0.800000011920929),
                                   fontSize: 12,
                                   fontFamily: 'Inter',
                                   fontWeight: FontWeight.w400,
@@ -152,9 +151,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 decoration: BoxDecoration(
                                   boxShadow: const [AppStyle.defaultBoxShadow],
                                   borderRadius: BorderRadius.circular(10),
-                                  color: tileIndex == index
-                                      ? const Color(0xFF025464)
-                                      : Colors.white,
+                                  color: tileIndex == index ? const Color(0xFF025464) : Colors.white,
                                 ),
                                 child: Center(
                                   child: Text(
@@ -162,15 +159,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     // overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
                                     style: TextStyle(
-                                      color: tileIndex == index
-                                          ? Colors.white
-                                          : const Color(0xCC1F1F1F),
-                                      fontSize:
-                                          tileIndex == index ? 20.sp : 16.sp,
+                                      color: tileIndex == index ? Colors.white : const Color(0xCC1F1F1F),
+                                      fontSize: tileIndex == index ? 20.sp : 16.sp,
                                       fontFamily: 'Inter',
-                                      fontWeight: tileIndex == index
-                                          ? FontWeight.w500
-                                          : FontWeight.w400,
+                                      fontWeight: tileIndex == index ? FontWeight.w500 : FontWeight.w400,
                                     ),
                                   ),
                                 ),
@@ -196,12 +188,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 290.h,
                     child: GridView.builder(
                         scrollDirection: Axis.vertical,
-                        gridDelegate:
-                            const SliverGridDelegateWithMaxCrossAxisExtent(
-                                maxCrossAxisExtent: 200,
-                                mainAxisExtent: 170,
-                                crossAxisSpacing: 10,
-                                mainAxisSpacing: 10),
+                        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 200, mainAxisExtent: 170, crossAxisSpacing: 10, mainAxisSpacing: 10),
                         itemCount: watches.length,
                         itemBuilder: (context, index) {
                           return WatchBuilder(
