@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconly/iconly.dart';
+
 import 'package:watches_store_team_4/utils/constant.dart';
 
 class ItemBuilder extends StatefulWidget {
@@ -12,7 +13,7 @@ class ItemBuilder extends StatefulWidget {
 }
 
 class _ItemBuilderState extends State<ItemBuilder> {
-  bool isfavorite = false;
+  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,13 +57,13 @@ class _ItemBuilderState extends State<ItemBuilder> {
             Padding(
               padding: const EdgeInsets.only(bottom: 100),
               child: GestureDetector(
-                  onTap: () async {
+                  onTap: () {
                     setState(() {
-                      isfavorite = !isfavorite;
+                      isFavorite = !isFavorite;
                     });
                   },
-                  child: Icon(CupertinoIcons.heart,
-                      color: isfavorite
+                  child: Icon(IconlyBold.heart,
+                      color: isFavorite
                           ? Colors.red
                           : const Color.fromARGB(255, 236, 235, 235))),
             ),

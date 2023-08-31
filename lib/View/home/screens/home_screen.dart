@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:watches_store_team_4/view/category/categoryScreen.dart';
 import 'package:watches_store_team_4/view/home/widgets/default_search.dart';
 
 import '../../../utils/constant.dart';
@@ -30,19 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 52.h,
-            ),
-            // Padding(
-            //     padding: EdgeInsets.only(left: 26.w),
-            //     child: GestureDetector(
-            //       onTap: () {},
-            //       child: Icon(
-            //         Icons.arrow_back_ios,
-            //         size: 20.sp,
-            //       ),
-            //     )),
-            SizedBox(
-              height: 12.h,
+              height: 60.h,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -79,7 +68,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 'collection offers a wide range of prestigious, high-precision timepieces',
                                 style: TextStyle(
-                                  color: Colors.white.withOpacity(0.800000011920929),
+                                  color: Colors.white
+                                      .withOpacity(0.800000011920929),
                                   fontSize: 12,
                                   fontFamily: 'Inter',
                                   fontWeight: FontWeight.w400,
@@ -130,56 +120,91 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: 24.h,
                   ),
-                  SizedBox(
-                    height: 35.h,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              tileIndex = index;
-                            });
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 40.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  tileIndex = index;
+                                });
+                              },
+                              child: Column(
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(builder: (context) {
+                                        return CategoryScreen(
+                                          title: tiles[index],
+                                        );
+                                      }));
+                                    },
+                                    child: Container(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 4.w),
+                                      width: tileIndex == index ? 100 : 74,
+                                      height: tileIndex == index ? 35 : 34,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: tileIndex == index
+                                              ? const Color(0xFF025464)
+                                              : Colors.white,
+                                          boxShadow: const [
+                                            AppStyle.defaultBoxShadow
+                                          ]
+                                          // shape: RoundedRectangleBorder(
+                                          //   borderRadius: BorderRadius.circular(10),
+                                          // ),
+                                          // shadows: const [
+                                          //   BoxShadow(
+                                          //     color: Color(0x3F000000),
+                                          //     blurRadius: 4,
+                                          //     offset: Offset(0, 4),
+                                          //     spreadRadius: 0,
+                                          //   ),
+                                          // ],
+                                          ),
+                                      child: Center(
+                                        child: Text(
+                                          tiles[index],
+                                          // overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                            color: tileIndex == index
+                                                ? Colors.white
+                                                : const Color(0xCC1F1F1F),
+                                            fontSize: tileIndex == index
+                                                ? 20.sp
+                                                : 16.sp,
+                                            fontFamily: 'Inter',
+                                            fontWeight: tileIndex == index
+                                                ? FontWeight.w500
+                                                : FontWeight.w400,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 5.h,
+                                  ),
+                                ],
+                              ),
+                            );
                           },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 4.w),
-                            width: tileIndex == index ? 74 : 90,
-                            height: tileIndex == index ? 35 : 34,
-                            decoration: ShapeDecoration(
-                              color: tileIndex == index ? const Color(0xFF025464) : Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              shadows: const [
-                                BoxShadow(
-                                  color: Color(0x3F000000),
-                                  blurRadius: 4,
-                                  offset: Offset(0, 4),
-                                  spreadRadius: 0,
-                                ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Text(
-                                tiles[index],
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1,
-                                style: TextStyle(
-                                  color: tileIndex == index ? Colors.white : const Color(0xCC1F1F1F),
-                                  fontSize: tileIndex == index ? 20.sp : 16.sp,
-                                  fontFamily: 'Inter',
-                                  fontWeight: tileIndex == index ? FontWeight.w500 : FontWeight.w400,
-                                ),
-                              ),
-                            ),
+                          separatorBuilder: (context, index) => SizedBox(
+                            width: 16.w,
                           ),
-                        );
-                      },
-                      separatorBuilder: (context, index) => SizedBox(
-                        width: 16.w,
+                          itemCount: tiles.length,
+                        ),
                       ),
-                      itemCount: tiles.length,
-                    ),
+                    ],
                   ),
                   SizedBox(
                     height: 24.h,
@@ -192,8 +217,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 250.h,
                     child: GridView.builder(
                         scrollDirection: Axis.vertical,
-                        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                            maxCrossAxisExtent: 200, mainAxisExtent: 170, crossAxisSpacing: 10, mainAxisSpacing: 10),
+                        gridDelegate:
+                            const SliverGridDelegateWithMaxCrossAxisExtent(
+                                maxCrossAxisExtent: 200,
+                                mainAxisExtent: 170,
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10),
                         itemCount: watches.length,
                         itemBuilder: (context, index) {
                           return WatchBuilder(
