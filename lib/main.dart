@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:watches_store_team_4/view/home/layout_screen.dart';
+
+import 'View/home/layout_screen.dart';
 
 void main() {
   runApp(const MyApp());
