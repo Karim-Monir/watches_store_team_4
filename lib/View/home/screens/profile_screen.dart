@@ -2,10 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_expanded_tile/flutter_expanded_tile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:watches_store_team_4/utils/constant.dart';
 
-import 'package:watches_store_team_4/view/home/LayoutScreen.dart';
+import '../../../view/home/layout_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -29,16 +28,12 @@ class ProfileScreen extends StatelessWidget {
                       },
                     ));
                   },
-                  icon: const Icon(Icons.arrow_back_ios_outlined,
-                      color: Colors.black),
+                  icon: const Icon(Icons.arrow_back_ios_outlined, color: Colors.black),
                 ),
                 SizedBox(
                   width: 60.w,
                 ),
-                Text("Account Setting",
-                    style: TextStyle(
-                        fontSize: 28.sp,
-                        color: const Color.fromRGBO(31, 31, 31, 1))),
+                Text("Account Setting", style: TextStyle(fontSize: 28.sp, color: const Color.fromRGBO(31, 31, 31, 1))),
               ],
             ),
             SizedBox(
@@ -92,18 +87,15 @@ class ProfileScreen extends StatelessWidget {
                     return ExpandedTile(
                         theme: const ExpandedTileThemeData(
                           headerColor: Colors.transparent,
-                          contentBackgroundColor: AppStyle.kmainColor,
+                          contentBackgroundColor: AppStyle.kMainColor,
                           contentPadding: EdgeInsets.all(12.0),
                           contentRadius: 12.0,
                         ),
-                        controller: index == 2
-                            ? controller.copyWith(isExpanded: true)
-                            : controller,
+                        controller: index == 2 ? controller.copyWith(isExpanded: true) : controller,
                         title: AppStyle.ProfileItem[index],
                         content: Container(
-                          decoration: BoxDecoration(
-                              color: AppStyle.kmainColor,
-                              borderRadius: BorderRadius.circular(10)),
+                          decoration:
+                              BoxDecoration(color: AppStyle.kMainColor, borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             children: [
                               const Center(
